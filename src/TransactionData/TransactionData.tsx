@@ -21,13 +21,13 @@ function TransactionData({ }: Props) {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:3001/transactions')
+        axios.get('/api/transactions')
             .then((res) => {
                 setTransaction(res.data);
             })
             .catch(err => console.log("Error fetching transactions:", err));
 
-        axios.get('http://localhost:3001/customers')
+        axios.get('/api/customers')
             .then((res) => {
                 setCustomers(res.data);
             })
